@@ -128,6 +128,7 @@ So, this is the hash of the original artwork.
 **HOWEVER** the IPFS link that is in the contract is different from this. If you get the on-chain info, you get this link
 
 ![img/research/worthless-redux-ipfs.png](img/research/worthless-redux-ipfs.png)
+
 The hash that it returns is `QmTtokcWqLmGrSEN6f1srpX42n1HdmmmnjznB62RqB9r8Y`. So what is this hash? It has to be a JSON file like described before. I don't know (yet).
 
 When searching for the old RareArtLabs website on the [Web Archive](https://web.archive.org/web/20191224091819/https://rareart.io/app.js) I stumbled upon a piece of JavaScript that did have the original `QmTvhbmKf23UaJKuU4yVVB2popMT2YNS2a8FyWmBVVw9AE` hash in the source though (see highlighted line).
