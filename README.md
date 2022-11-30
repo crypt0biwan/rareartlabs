@@ -43,7 +43,11 @@ Next, I downloaded an export of all transactions from the address `0x9068249ab8b
 After that I was searching the [Web Archive](https://web.archive.org) for any additional data. Luckily a couple of files were archived and I was able to find some JavaScript and additional data of the original rareart.io website.
 
 I also managed to extract the token ABI (which is stored in `abis/ERC20token.json`).
-With this information I was able to extract the name, supply and IPFS information of all the Rare Art artworks 💪
+
+It turned out the Rare Art people proposed an EIP to be able to add metadata to an ERC20 token, just like an ERC721 token has (tokenURI field). More about this [can be found on Github](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1046.md).
+So basically all the tokens they created had a modified ERC20 contract to include an IPFS link!
+
+With all this information I was able to extract the name, supply and IPFS link information of all the Rare Art artworks 💪
 
 ---
 
@@ -66,6 +70,31 @@ It looks like there were 2 IPFS domains that were being used
 
 * rare-ipfs.imgix.net
 * ipfs.rareart.io
+
+In the EIP I talked about before they spoke about "the tokenURI JSON".
+So this told me the on-chain IPFS link wasn't a direct image, but contained more data.
+The EIP also described the JSON syntax of the item, like this:
+
+```json
+{
+    "title": "Asset Metadata",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Identifies the asset to which this token represents"
+        },
+        "description": {
+            "type": "string",
+            "description": "Describes the asset to which this token represents"
+        },
+        "image": {
+            "type": "string",
+            "description": "A URI pointing to a resource with mime type image/* representing the asset to which this token represents. Consider making any images at a width between 320 and 1080 pixels and aspect ratio between 1.91:1 and 4:5 inclusive."
+        }
+    }
+}
+```
 
 ---
 
@@ -99,7 +128,7 @@ So, this is the hash of the original artwork.
 **HOWEVER** the IPFS link that is in the contract is different from this. If you get the on-chain info, you get this link
 
 ![img/research/worthless-redux-ipfs.png](img/research/worthless-redux-ipfs.png)
-The hash that it returns is `QmTtokcWqLmGrSEN6f1srpX42n1HdmmmnjznB62RqB9r8Y`. So what is this hash? Is it maybe a JSON file with more information than just the image? I don't know (yet)..
+The hash that it returns is `QmTtokcWqLmGrSEN6f1srpX42n1HdmmmnjznB62RqB9r8Y`. So what is this hash? It has to be a JSON file like described before. I don't know (yet).
 
 When searching for the old RareArtLabs website on the [Web Archive](https://web.archive.org/web/20191224091819/https://rareart.io/app.js) I stumbled upon a piece of JavaScript that did have the original `QmTvhbmKf23UaJKuU4yVVB2popMT2YNS2a8FyWmBVVw9AE` hash in the source though (see highlighted line).
 So it definitely existed!!!
