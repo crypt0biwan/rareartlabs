@@ -176,6 +176,7 @@ On October 30, 2019 I made the decision to burn all tokens on R.A.R.E Art Labs t
 ```
 
 The announcement:
+
 ![img/research/special-announcement.jpg](img/research/special-announcement.jpg)
 
 ---
