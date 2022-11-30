@@ -221,7 +221,7 @@ The multisig wallet that holds most of the tokens is this one [0x2a5283380e4bbd3
 One of the vending machines / exchange contracts is [0xb5a4d58c047ba782f54e1febe4833a11e2b228e0](https://etherscan.io/address/0xb5a4d58c047ba782f54e1febe4833a11e2b228e0).
 
 The ABI that comes with it is `abis/RareExchange.json`
-If you're interesteg in the Solidity source, I was able to recover a part from it, see `contracts/RareExchange.sol`
+If you're interested in the Solidity source, I was able to recover a part from it, see `contracts/RareExchange.sol`
 
 You can use this ABI to interact with the contract through [https://www.myetherwallet.com/wallet/interact](https://www.myetherwallet.com/wallet/interact) for example.
 
