@@ -67,11 +67,11 @@ It looks like there were 2 IPFS domains that were being used
 * rare-ipfs.imgix.net
 * ipfs.rareart.io
 
+---
+
 ## ⭐️ Highlighted artworks
 
 I talked to a couple of people on Twitter about the images and IPFS data. I also helped a few recovering their ETH that was still stuck within the RARE exchange contract.
-
----
 
 ### Worthless Redux - Brian Romero
 
